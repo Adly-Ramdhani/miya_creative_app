@@ -164,7 +164,7 @@
 </head>
 <body class="bg-background text-on-surface font-body-md">
     <!-- Desktop Navigation Header -->
-    <header class="bg-surface dark:bg-surface-dim w-full sticky top-0 z-50 border-b border-outline/10 shadow-sm">
+    <header class="relative bg-surface dark:bg-surface-dim w-full sticky top-0 z-40 border-b border-outline/10 shadow-sm">
         <div class="max-w-container-max mx-auto px-4 lg:px-gutter py-4">
             <div class="flex justify-between items-center w-full">
                 <div class="flex items-center gap-4">
@@ -221,11 +221,45 @@
             </div>
         </div>
     </header>
+    <!-- Mobile menu (hidden by default) -->
+    <div id="mobile-menu" class="fixed inset-0 z-60 pointer-events-none" aria-hidden="true">
+        <!-- backdrop -->
+        <div id="mobile-menu-backdrop" class="absolute inset-0 bg-black/0 opacity-0 transition-opacity duration-300"></div>
+
+        <!-- panel (slides from right). On small screens use full width for better UX -->
+        <div id="mobile-menu-panel" class="absolute right-0 top-0 h-full w-80 max-w-full bg-[#fff8f6] shadow-2xl p-6 overflow-y-auto transform translate-x-full transition-transform duration-300 ease-in-out">
+            <div class="flex items-center justify-between mb-6">
+                <div class="flex items-center gap-3">
+                    <img alt="logo" class="h-8 w-8 object-contain" src="img/logo2.png" />
+                    <span class="font-display-lg text-lg text-primary font-bold">Miya Creative</span>
+                </div>
+                <button id="mobile-menu-close" class="text-primary material-symbols-outlined text-2xl p-1 rounded hover:bg-primary/5" aria-label="Close menu">close</button>
+            </div>
+
+            <nav class="flex flex-col gap-4 border-t border-outline/10 pt-4">
+                <a href="#bouquet-section" class="py-3 px-2 text-lg font-medium text-on-surface hover:text-primary rounded-lg">Bouquet</a>
+                <a href="#cake-section" class="py-3 px-2 text-lg font-medium text-on-surface hover:text-primary rounded-lg">Cake</a>
+                <a href="#rustic-section" class="py-3 px-2 text-lg font-medium text-on-surface hover:text-primary rounded-lg">Rustic</a>
+                <a href="#mahar-section" class="py-3 px-2 text-lg font-medium text-on-surface hover:text-primary rounded-lg">Mahar</a>
+                <a href="#hampers-section" class="py-3 px-2 text-lg font-medium text-on-surface hover:text-primary rounded-lg">Hampers</a>
+                <a href="#invitations-section" class="py-3 px-2 text-lg font-medium text-on-surface hover:text-primary rounded-lg">Design Undangan</a>
+                <a href="#flowertable-section" class="py-3 px-2 text-lg font-medium text-on-surface hover:text-primary rounded-lg">Flower Table</a>
+            </nav>
+
+            <div class="mt-6 border-t border-outline/10 pt-4">
+                <a href="https://wa.me/6285692591642" class="w-full inline-flex items-center justify-center gap-2 px-4 py-3 bg-primary text-white rounded-lg font-semibold hover:opacity-95">
+                    <span class="material-symbols-outlined">chat</span>
+                    Pesan Sekarang
+                </a>
+                <p class="mt-3 text-sm text-on-surface-variant">Butuh bantuan? Hubungi kami lewat WhatsApp.</p>
+            </div>
+        </div>
+    </div>
     <main class="max-w-container-max mx-auto px-4 lg:px-gutter py-xl">
         <!-- Hero Section -->
         <section class="mb-xl text-center">
             <div class="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-primary/10 text-primary font-label-md mb-lg">
-                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+               
                 ARTISAN CURATION
             </div>
             <h2 class="font-display-lg text-5xl md:text-7xl text-on-surface mb-lg leading-[1.05]">
@@ -399,6 +433,37 @@
             });
         });
 
+        // Mobile menu toggle (slide + backdrop)
+        const mobileTrigger = document.getElementById('mobile-menu-trigger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobilePanel = document.getElementById('mobile-menu-panel');
+        const mobileClose = document.getElementById('mobile-menu-close');
+        const mobileBackdrop = document.getElementById('mobile-menu-backdrop');
+
+        function showMenu() {
+            if (!mobileMenu || !mobilePanel || !mobileBackdrop) return;
+            mobileMenu.classList.remove('pointer-events-none');
+            mobileBackdrop.classList.replace('bg-black/0', 'bg-black/40');
+            mobileBackdrop.classList.add('opacity-100');
+            mobilePanel.classList.replace('translate-x-full', 'translate-x-0');
+            mobilePanel.setAttribute('aria-hidden', 'false');
+            mobileTrigger?.setAttribute('aria-expanded', 'true');
+        }
+
+        function hideMenu() {
+            if (!mobileMenu || !mobilePanel || !mobileBackdrop) return;
+            mobileBackdrop.classList.replace('bg-black/40', 'bg-black/0');
+            mobilePanel.classList.replace('translate-x-0', 'translate-x-full');
+            mobilePanel.setAttribute('aria-hidden', 'true');
+            mobileTrigger?.setAttribute('aria-expanded', 'false');
+            // after transition remove pointer events
+            setTimeout(() => mobileMenu.classList.add('pointer-events-none'), 300);
+        }
+
+        mobileTrigger?.addEventListener('click', (e) => { e.stopPropagation(); showMenu(); });
+        mobileClose?.addEventListener('click', hideMenu);
+        mobileBackdrop?.addEventListener('click', hideMenu);
+        document.querySelectorAll('#mobile-menu nav a').forEach(a => a.addEventListener('click', hideMenu));
     </script>
 </body>
 </html>
