@@ -3,6 +3,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
     <style>
@@ -331,32 +332,24 @@
         <!-- Desktop Footer -->
         <footer class="bg-surface-container-low rounded-t-[40px] p-lg lg:p-xl border-t border-outline/10">
             <div class="max-w-container-max mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-xl">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-xl">
                     <div class="space-y-6 lg:col-span-1">
                         <div class="flex items-center gap-3">
                             <img alt="Miya Creative Logo" class="h-10 w-10 object-contain" src="img/logo2.png" />
                             <h3 class="font-display-lg text-2xl text-primary font-bold">Miya Creative</h3>
                         </div>
                         <p class="font-body-md text-on-surface-variant leading-relaxed">
-                            Creating timeless memories through artisanal floral and event designs since 2018.
+                            Creating timeless memories through artisanal floral and event designs since 2021.
                         </p>
                         <div class="flex gap-4">
-                            <a class="w-10 h-10 rounded-full border border-outline/20 flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
-                                <span class="material-symbols-outlined text-[20px]">public</span>
+                            <a class="w-10 h-10 rounded-full border border-outline/20 flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="https://www.instagram.com/miya.creative/?hl=id">
+                                <i class="ri-instagram-line text-[20px]"></i>
                             </a>
-                            <a class="w-10 h-10 rounded-full border border-outline/20 flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="#">
-                                <span class="material-symbols-outlined text-[20px]">alternate_email</span>
+
+                            <a class="w-10 h-10 rounded-full border border-outline/20 flex items-center justify-center hover:bg-primary hover:text-white transition-all" href="https://wa.me/6285692591642">
+                                <i class="ri-whatsapp-line text-[20px]"></i>
                             </a>
                         </div>
-                    </div>
-                    <div class="space-y-6">
-                        <h4 class="font-label-md text-primary tracking-widest uppercase">Quick Links</h4>
-                        <nav class="flex flex-col gap-3">
-                            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Our Collections</a>
-                            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">The Studio</a>
-                            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Wedding Services</a>
-                            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Corporate Gifts</a>
-                        </nav>
                     </div>
                     <div class="space-y-6">
                         <h4 class="font-label-md text-primary tracking-widest uppercase">Contact Us</h4>
@@ -364,29 +357,29 @@
                             <div class="flex gap-3">
                                 <span class="material-symbols-outlined text-primary">location_on</span>
                                 <p class="font-body-md text-on-surface-variant text-sm">
-                                    Jl. Merdeka No. 123, Central City<br />
+                                    Jl. Setia Dharma Teluk Air Karimun,Kepri<br />
                                     Open Daily: 09:00 - 20:00
                                 </p>
                             </div>
                             <div class="flex gap-3">
                                 <span class="material-symbols-outlined text-primary">phone_iphone</span>
-                                <p class="font-body-md text-on-surface-variant text-sm">+62 812 3456 789</p>
+                                <p class="font-body-md text-on-surface-variant text-sm">+62 822-8310-9539</p>
                             </div>
                             <div class="flex gap-3">
                                 <span class="material-symbols-outlined text-primary">mail</span>
-                                <p class="font-body-md text-on-surface-variant text-sm">hello@miyacreative.com</p>
+                                <p class="font-body-md text-on-surface-variant text-sm">azmialaily1506@gmail.com</p>
                             </div>
                         </div>
                     </div>
                     <div class="space-y-6 lg:col-span-1">
                         <h4 class="font-label-md text-primary tracking-widest uppercase">Find Our Studio</h4>
                         <div class="rounded-2xl overflow-hidden h-[180px] border border-outline/10">
-                            <iframe allowfullscreen="" height="100%" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8199127712064!2d103.8442500745233!3d1.2818014617565983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da190e0c8d1791%3A0x7d6f51939b4b0e9a!2sMiya%20Creative!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid" style="border:0;" width="100%"></iframe>
+                            <iframe allowfullscreen="" height="100%" loading="lazy" src="https://www.google.com/maps?q=Teluk+Air,+Karimun,+Karimun+Regency,+Riau+Islands&output=embed" style="border:0;" width="100%"></iframe>
                         </div>
                     </div>
                 </div>
                 <div class="text-center pt-8 border-t border-outline/10">
-                    <p class="font-caption text-on-surface-variant">© 2024 Miya Creative Artisanal Studio. All rights reserved.</p>
+                    <p class="font-caption text-on-surface-variant">© 2026 Miya Creative Artisanal Studio. All rights reserved.</p>
                 </div>
             </div>
         </footer>
